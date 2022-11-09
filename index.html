@@ -7,6 +7,7 @@
   <link href="https://cdn.jsdelivr.net/npm/videojs-seek-buttons@3.0.1/dist/videojs-seek-buttons.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/videojs-dvrseekbar@0.0.1/dist/videojs-dvrseekbar.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/videojs-dvr@1.4.0/dist/videojs-dvr.css" rel="stylesheet">
+  <link href="https://unpkg.com/videojs-playlist-ui@4.1.0/dist/videojs-playlist-ui.css" rel="stylesheet">
 
   <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
   <!-- <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script> -->
@@ -31,6 +32,8 @@
   <script src="https://cdn.jsdelivr.net/npm/videojs-seek-buttons@3.0.1/dist/videojs-seek-buttons.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/videojs-dvrseekbar@0.0.1/dist/videojs-dvrseekbar.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/videojs-dvr@1.4.0/dist/videojs-dvr.js"></script>
+  <script src="https://unpkg.com/videojs-playlist@5.0.0/dist/videojs-playlist.js"></script>
+  <script src="https://unpkg.com/videojs-playlist-ui@4.1.0/dist/videojs-playlist-ui.js"></script>
 </body>
 
 <script>
@@ -48,5 +51,42 @@
   });
   player.dvrseekbar();
   player.dvr();
+  player.playlist([{
+    name: 'COURT',
+    sources: [
+      { src: 'https://arkina1234.github.io/live/hls/court.m3u8', type: 'application/x-mpegURL' },
+    ],
+    thumbnail: false
+  }, {
+    name: 'FOXWX',
+    sources: [
+      { src: 'https://arkina1234.github.io/live/hls/foxwx.m3u8', type: 'application/x-mpegURL' },
+    ],
+    thumbnail: false
+  }, {
+    name: 'KIDS',
+    sources: [
+      { src: 'https://arkina1234.github.io/live/hls/kids.m3u8', type: 'application/x-mpegURL' },
+    ],
+    thumbnail: false
+  }, {
+    name: 'LX',
+    sources: [
+      { src: 'https://arkina1234.github.io/live/hls/lx.m3u8', type: 'application/x-mpegURL' },
+    ],
+    thumbnail: false
+  }, {
+    name: 'NEWSY',
+    sources: [
+      { src: 'https://arkina1234.github.io/live/hls/newsy.m3u8', type: 'application/x-mpegURL' },
+    ],
+    thumbnail: false
+  }, {
+    name: 'THEGRIO',
+    sources: [
+      { src: 'https://arkina1234.github.io/live/hls/thegrio.m3u8', type: 'application/x-mpegURL' },
+    ],
+    thumbnail: false
+  }]);
 </script>
 </html>
