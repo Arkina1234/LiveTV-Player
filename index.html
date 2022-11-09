@@ -14,16 +14,31 @@
 </head>
 
 <body>
-  <video id="my-video" class="video-js vjs-big-play-centered" controls preload="auto" width="640" height="360" poster="MY_VIDEO_POSTER.jpg" data-setup='{"fluid": false}'>
+  <style>
+    .player-container, .vjs-playlist {
+      height: 300px;
+    }
+  </style>
 
-    <source src="https://crtv-301f.kxcdn.com/hls/select-tv-main-vod.m3u8" type="application/x-mpegURL" />
+  <div class="player-container">
+      <video id="my-video" class="video-js vjs-big-play-centered" controls preload="auto" width="640" height="360" poster="MY_VIDEO_POSTER.jpg" data-setup='{"fluid": false}'>
 
-    <p class="vjs-no-js">
-      To view this video please enable JavaScript, and consider upgrading to a
-      web browser that
-      <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-    </p>
-  </video>
+      <source src="https://crtv-301f.kxcdn.com/hls/select-tv-main-vod.m3u8" type="application/x-mpegURL" />
+
+      <p class="vjs-no-js">
+        To view this video please enable JavaScript, and consider upgrading to a
+        web browser that
+        <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+      </p>
+    </video>
+
+    <div class="vjs-playlist">
+      <!--
+        The contents of this element will be filled based on the
+        currently loaded playlist
+      -->
+    </div>
+  </div>
 
   <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
   <script src="https://unpkg.com/@videojs/http-streaming@0.9.0/dist/videojs-http-streaming.js"></script>
@@ -88,5 +103,7 @@
     ],
     thumbnail: false
   }]);
+  player.playlistUi();
+  player.playlist.autoadvance(0);
 </script>
 </html>
