@@ -60,7 +60,10 @@
     }
   });
   player.hlsQualitySelector();
-  player.dvrseekbar();
+  player.seekButtons({
+    forward: 30,
+    back: 10
+  });
   player.dvr();
   player.playlist([{
     name: 'COURT',
